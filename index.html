@@ -11,14 +11,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>YT Fight</title>
+    <title>YT Stats</title>
   </head>
   <body>
     <section class="hero is-primary is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            YT Fight
+            YT Stats
             <span class="icon">
               <i class="fas fa-film"></i>
             </span>
@@ -26,7 +26,13 @@
         </div>
       </div>
     </section>
-    <div class="container"></div>
+    <div class="container">
+      <input id="search_kw" type="text" name="kw" placeholder="Type something here...">
+      <select name="type" id="type">
+        <option value="video">Video</option>
+        <option value="channel">Channel</option>
+      </select>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
