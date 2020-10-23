@@ -37,4 +37,11 @@ const onInput = e => {
     search(e.target.value, type.value);
 }
 
+const onTypeChange = e => {
+    if(searchKw.value.trim().length > 0 ){
+        search(e.target.value, type.value);
+    }
+}
+
 searchKw.addEventListener('input', debounce(onInput));
+type.addEventListener('change', onTypeChange);
