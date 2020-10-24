@@ -42,6 +42,12 @@ const autocompleteContent= searchContainer.querySelector('.dropdown-content');
 
 
 const onInput = async e => {
+
+    // don't make any request if it's empty
+    if(e.target.value.length == 0){
+        return;
+    }
+    
     const items = await search(e.target.value, type.value);
 
     //make sure to delete previous results for the new search
