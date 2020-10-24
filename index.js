@@ -48,16 +48,26 @@ const onInput = async e => {
     autocompleteContent.innerHTML = ``;
 
     autocompleteDropdown.classList.add('is-active');
-    for (const item of items) {
-        const result = document.createElement('a');
-        result.classList.add('dropdown-item');
-        result.innerHTML = `
+    if(items.length > 0){
         
-                <img src="${item.snippet.thumbnails.default.url}" />
-                <h3>${item.snippet.title}</h3>
-
-        `;
-        autocompleteContent.appendChild(result);
+        for (const item of items) {
+            const result = document.createElement('a');
+            result.classList.add('dropdown-item');
+            result.innerHTML = `
+            
+                    <img src="${item.snippet.thumbnails.default.url}" />
+                    <h3>${item.snippet.title}</h3>
+    
+            `;
+            autocompleteContent.appendChild(result);
+        }
+    }else{ // no result
+        const noResult = document.createElement('p');
+            noResult.classList.add('dropdown-item');
+            noResult.innerHTML = `
+                    <h3>No results found for your query</h3>
+            `;
+            autocompleteContent.appendChild(noResult);
     }
 }
 
