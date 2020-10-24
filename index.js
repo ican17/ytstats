@@ -70,3 +70,10 @@ const onTypeChange = async e => {
 
 searchKw.addEventListener('input', debounce(onInput));
 type.addEventListener('change', onTypeChange);
+
+/** CLOSE THE DROPDOWN IF CLICKED OUTSIDE */
+document.addEventListener('click', e => {
+    if(!searchContainer.contains(e.target)){
+        autocompleteDropdown.classList.remove('is-active');
+    }
+})
