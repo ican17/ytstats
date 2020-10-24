@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>YTSearch</title>
-  </head>
-  <body>
-    <section class="hero is-primary is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            YTSearch
-            <span class="icon">
-              <i class="fas fa-film"></i>
-            </span>
-          </h1>
-        </div>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>YTSearch</title>
+</head>
+
+<body>
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          YTSearch
+          <span class="icon">
+            <i class="fas fa-film"></i>
+          </span>
+        </h1>
       </div>
-    </section>
-    <div class="container">
-      <input id="search_kw" type="text" name="kw" placeholder="Type something here...">
-      <select name="type" id="type">
-        <option value="video">Video</option>
-        <option value="channel">Channel</option>
-        <option value="playlist">Playlist</option>
-      </select>
     </div>
-    <script src="utils.js"></script>
-    <script src="index.js"></script>
-  </body>
+  </section>
+  <div class="container">
+    <div id="search">
+
+    </div>
+   
+    
+  </div>
+  <script src="utils.js"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
