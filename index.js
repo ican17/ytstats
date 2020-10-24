@@ -59,6 +59,13 @@ const onInput = async e => {
                     <h3>${item.snippet.title}</h3>
     
             `;
+            
+            // if the user clicks on an entry => close dropdown + print the title in the input
+            result.addEventListener('click', () => {
+                autocompleteDropdown.classList.remove('is-active');
+                searchKw.value = item.snippet.title;
+            });
+
             autocompleteContent.appendChild(result);
         }
     }else{ // no result
