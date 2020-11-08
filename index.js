@@ -1,5 +1,9 @@
 //TO PUT IN ENV =+>
-const APIKEY = 'AIzaSyCem5-tCnvPw8dxnEvJO54DVo7Mu3DECBw';
+
+// Oldr apikeys :
+//const APIKEY = 'AIzaSyCem5-tCnvPw8dxnEvJO54DVo7Mu3DECBw';
+
+const APIKEY = 'AIzaSyDNggO3vw4GH_TE2HI8fNpmN8OxkCNJf74';
 
 /* FUNCTION: SEARCH FUNCTION */
 const search = async (query, type, pageToken = null) => {
