@@ -136,6 +136,12 @@ createAutocomplete({
                 <img src="${item.snippet.thumbnails.default.url}" />
                 <h3>${item.snippet.title}</h3>
             `,
+    selectOption : (item) => {
+        return {
+            handler : onItemSelected.bind(null, item),
+            inputValue : item.snippet.title
+        }
+    }
 });
 
 const displayResultDetailContainer = document.querySelector('#result');

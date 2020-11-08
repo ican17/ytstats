@@ -1,4 +1,4 @@
-const createAutocomplete = ({ root, renderOption }) => {
+const createAutocomplete = ({ root, renderOption, selectOption }) => {
     root.innerHTML = `
     <div class="dropdown">
         <input id="search_kw" type="text" name="kw" class="input" placeholder="Type something here...">
@@ -37,8 +37,8 @@ const createAutocomplete = ({ root, renderOption }) => {
                 // if the user clicks on an entry => close dropdown + print the title in the input
                 result.addEventListener('click', () => {
                     dropdwon.classList.remove('is-active');
-                    input.value = item.snippet.title;
-                    onItemSelected(item);
+                    input.value = selectOption(item).inputValue;
+                    selectOption(item).handler();
                 });
 
                 resultsContainer.appendChild(result);
