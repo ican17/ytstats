@@ -1,4 +1,4 @@
-const createAutocomplete = ({ root, renderOption, selectOption }) => {
+const createAutocomplete = ({ root, renderOption, selectOption, fetchSearchData }) => {
     root.innerHTML = `
     <div class="dropdown">
         <input id="search_kw" type="text" name="kw" class="input" placeholder="Type something here...">
@@ -62,7 +62,7 @@ const createAutocomplete = ({ root, renderOption, selectOption }) => {
             return;
         }
 
-        const items = await search(e.target.value, type.value);
+        const items = await fetchSearchData(e.target.value, type.value);
         populateAutocomplete(items);
 
     }
@@ -70,7 +70,7 @@ const createAutocomplete = ({ root, renderOption, selectOption }) => {
     // On type changed handler
     const onTypeChanged = async () => {
         if (input.value.trim().length > 0) {
-            const items = await search(input.value, type.value);
+            const items = await fetchSearchData(input.value, type.value);
             populateAutocomplete(items);
         }
     }

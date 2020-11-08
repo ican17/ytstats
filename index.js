@@ -5,19 +5,7 @@
 
 const APIKEY = 'AIzaSyDNggO3vw4GH_TE2HI8fNpmN8OxkCNJf74';
 
-/* FUNCTION: SEARCH FUNCTION */
-const search = async (query, type, pageToken = null) => {
-    const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
-        params: {
-            key: APIKEY,
-            q: query.trim(),
-            type: type,
-            part: 'snippet',
-            pageToken: pageToken
-        }
-    });
-    return response.data.items;
-}
+
 /* FUNCTION: Fetch data */
 const fetchData = async (id, type) => {
     const response = await axios.get('https://www.googleapis.com/youtube/v3/' + type, {
@@ -141,7 +129,20 @@ createAutocomplete({
             handler : onItemSelected.bind(null, item),
             inputValue : item.snippet.title
         }
-    }
+    },
+    fetchSearchData : async (query, type, pageToken = null) => {
+        const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
+            params: {
+                key: APIKEY,
+                q: query.trim(),
+                type: type,
+                part: 'snippet',
+                pageToken: pageToken
+            }
+        });
+        return response.data.items;
+    }, 
+ 
 });
 
 const displayResultDetailContainer = document.querySelector('#result');
