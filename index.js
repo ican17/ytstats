@@ -3,7 +3,9 @@
 // Oldr apikeys :
 //const APIKEY = 'AIzaSyCem5-tCnvPw8dxnEvJO54DVo7Mu3DECBw';
 
-const APIKEY = 'AIzaSyDNggO3vw4GH_TE2HI8fNpmN8OxkCNJf74';
+const APIKEY = 'AIzaSyD-zZYgeU0wYwou0RiusEN46LaUnT0at9g';
+
+//const APIKEY = 'AIzaSyDNggO3vw4GH_TE2HI8fNpmN8OxkCNJf74';
 
 
 /* FUNCTION: Fetch data */

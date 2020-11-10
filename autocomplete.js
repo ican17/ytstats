@@ -1,18 +1,20 @@
 const createAutocomplete = ({ root, renderOption, selectOption, fetchSearchData }) => {
     root.innerHTML = `
-    <div class="dropdown">
-        <input id="search_kw" type="text" name="kw" class="input" placeholder="Type something here...">
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-            <div class="dropdown-content">
-               
+    <div class = "container">
+        <div class="dropdown">
+            <input id="search_kw" type="text" name="kw" class="input" placeholder="Type something here...">
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                
+                </div>
             </div>
         </div>
-    </div>
-    <div class="select">
-        <select name="type" id="type">
-            <option value="video">Video</option>
-            <option value="channel">Channel</option>
-        </select>
+        <div class="select">
+            <select name="type" id="type">
+                <option value="video">Video</option>
+                <option value="channel">Channel</option>
+            </select>
+        </div>
     </div>
 `;
 
