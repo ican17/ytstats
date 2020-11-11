@@ -1,1 +1,4 @@
-apikey.js
+public/apikey.js
+.firebaserc
+firebase.*
+.firebase/
