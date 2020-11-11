@@ -1,19 +1,26 @@
 const createAutocomplete = ({ root, renderOption, selectOption, fetchSearchData }) => {
     root.innerHTML = `
     <div class = "container">
-        <div class="dropdown">
-            <input id="search_kw" type="text" name="kw" class="input" placeholder="Type something here...">
-            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                <div class="dropdown-content">
-                
+        <div class = "columns">
+            <div class="column is-four-fifths">
+                <div class="dropdown is-100percent-width">
+                    <input id="search_kw" type="text" name="kw" class="input" placeholder="Type something here...">
+                    <div class="dropdown-menu is-100percent-width" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content is-100percent-width">
+                        
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="select">
-            <select name="type" id="type">
-                <option value="video">Video</option>
-                <option value="channel">Channel</option>
-            </select>
+
+            <div class="column">
+                <div class="select is-100percent-width">
+                    <select name="type" id="type" class="is-100percent-width">
+                        <option value="video">Video</option>
+                        <option value="channel">Channel</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
 `;

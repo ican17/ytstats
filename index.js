@@ -16,95 +16,97 @@ const fetchData = async (id, type) => {
 const ItemDetailTemplate = (data) => {
     const date = new Date(Date.parse(data.snippet.publishedAt))
     return `
-    <div class="card">
-    <div class="card-content">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-48x48">
-            <img src="${data.snippet.thumbnails.default.url}" alt="Placeholder image">
-          </figure>
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="${data.snippet.thumbnails.default.url}" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">${data.snippet.title}</p>
+              <p class="subtitle is-6">Published on: <time datetime="2016-1-1">${date.toUTCString()}</time></p>
+            </div>
+          </div>
+    
+          <div class="content">
+            <p class="subtitle is-6">Statistics:</p>
+            <table class="table is-narrow is-hoverable">
+              <thead>
+                <tr>
+                  <th>Criterion</th>
+                  <th>Stat</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${data.statistics.subscriberCount ?
+                `
+                <tr>
+                  <td><i class="fas fa-user"></i> Subs</td>
+                  <td>${data.statistics.subscriberCount}</td>
+                </tr>`
+                : ``
+                }
+                ${data.statistics.videoCount ?
+                `
+                <tr>
+                  <td><i class="fas fa-file-video"></i> Videos</td>
+                  <td>${data.statistics.videoCount}</td>
+                </tr>`
+                : ``
+                }
+                ${data.statistics.viewCount ?
+                `
+                <tr>
+                  <td><i class="fas fa-eye"></i> Views</td>
+                  <td>${data.statistics.viewCount}</td>
+                </tr>`
+                : ``
+                }
+                ${data.statistics.likeCount ?
+                `
+                <tr>
+                  <td><i class="fas fa-thumbs-up"></i> Likes</td>
+                  <td>${data.statistics.likeCount}</td>
+                </tr>`
+                : ``
+                }
+                ${data.statistics.dislikeCount ?
+                `
+                <tr>
+                  <td><i class="fas fa-thumbs-down"></i> Dislikes</td>
+                  <td>${data.statistics.dislikeCount}</td>
+                </tr>`
+                : ``
+                }
+                ${data.statistics.commentCount ?
+                `
+                <tr>
+                  <td><i class="fas fa-comment"></i> Comments</td>
+                  <td>${data.statistics.commentCount}</td>
+                </tr>`
+                : ``
+                }
+    
+              </tbody>
+            </table>
+    
+            ${data.snippet.tags ?
+            `
+            <p class="subtitle is-6">Tags(${data.snippet.tags.length}):</p>
+            <div class="tags are-small">
+              ${data.snippet.tags.map(tag => `<span class="tag">${tag}</span>`).join(``)}
+            </div>`
+    
+            : ``
+            }
+    
+          </div>
         </div>
-        <div class="media-content">
-          <p class="title is-4">${data.snippet.title}</p>
-          <p class="subtitle is-6">Published on: <time datetime="2016-1-1">${date.toUTCString()}</time></p>
-        </div>
-      </div>
-  
-      <div class="content">
-        <p class="subtitle is-6">Statistics:</p>
-        <table class="table is-narrow is-hoverable">
-          <thead>
-            <tr>
-              <th>Criterion</th>
-              <th>Stat</th>
-            </tr>
-          </thead>
-          <tbody>
-          ${data.statistics.subscriberCount ?
-            `
-              <tr>
-                <td><i class="fas fa-user"></i> Subs</td>
-                <td>${data.statistics.subscriberCount}</td>
-              </tr>`
-            : ``
-        }
-          ${data.statistics.videoCount ?
-            `
-              <tr>
-                <td><i class="fas fa-file-video"></i> Videos</td>
-                <td>${data.statistics.videoCount}</td>
-              </tr>`
-            : ``
-        }
-          ${data.statistics.viewCount ?
-            `
-              <tr>
-                <td><i class="fas fa-eye"></i> Views</td>
-                <td>${data.statistics.viewCount}</td>
-              </tr>`
-            : ``
-        }
-          ${data.statistics.likeCount ?
-            `
-              <tr>
-                <td><i class="fas fa-thumbs-up"></i> Likes</td>
-                <td>${data.statistics.likeCount}</td>
-              </tr>`
-            : ``
-        }
-          ${data.statistics.dislikeCount ?
-            `
-              <tr>
-                <td><i class="fas fa-thumbs-down"></i> Dislikes</td>
-                <td>${data.statistics.dislikeCount}</td>
-              </tr>`
-            : ``
-        }
-          ${data.statistics.commentCount ?
-            `
-              <tr>
-                <td><i class="fas fa-comment"></i> Comments</td>
-                <td>${data.statistics.commentCount}</td>
-              </tr>`
-            : ``
-        }
-           
-          </tbody>
-        </table>
-       
-        ${data.snippet.tags ?
-            `
-                <p class="subtitle is-6">Tags(${data.snippet.tags.length}):</p>
-                <div class="tags are-small">
-                    ${data.snippet.tags.map(tag => `<span class="tag">${tag}</span>`).join(``)}
-                </div>`
-
-            : ``
-        }
- 
       </div>
     </div>
-  </div>
         `;
 }
 
